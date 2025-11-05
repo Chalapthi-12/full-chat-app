@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@layer utilities {
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 8px;
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background-color: theme("colors.primary"); /* Uses Tailwind primary color */
+    border-radius: 4px;
+  }
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background-color: theme("colors.neutral"); /* Uses Tailwind neutral color */
+  }
+  .custom-scrollbar::-webkit-scrollbar-button {
+    background-color: theme("colors.primary"); /* Uses Tailwind neutral color */
+  }
+  .custom-scrollbar::-webkit-scrollbar-track-piece {
+    background-color: theme("colors.primary"); /* Uses Tailwind primary color */
+  }
+}

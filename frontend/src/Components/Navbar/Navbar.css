@@ -1,0 +1,128 @@
+.nav-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 10vh;
+  padding: 15px 40px;
+  background-color: default;
+  position: relative;
+}
+.nav-bar .nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  position: relative;
+}
+.settings,
+.profile,
+.logout,
+.hamburger {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 10px;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  font-weight: 400;
+  opacity: 50;
+}
+.logo h1 {
+  font-size: 1.6rem;
+  font-weight: 500;
+}
+/* From Uiverse.io by Cevorob */
+.burger {
+  position: relative;
+  width: 40px;
+  height: 30px;
+  background: transparent;
+  cursor: pointer;
+  display: block;
+}
+
+.burger input {
+  display: none;
+}
+
+.burger span {
+  display: block;
+  position: absolute;
+  height: 4px;
+  width: 100%;
+  border-radius: 9px;
+  opacity: 1;
+  left: 0;
+  transform: rotate(0deg);
+  transition: 0.25s ease-in-out;
+}
+
+.burger span:nth-of-type(1) {
+  top: 0px;
+  transform-origin: left center;
+}
+
+.burger span:nth-of-type(2) {
+  top: 50%;
+  transform: translateY(-50%);
+  transform-origin: left center;
+}
+
+.burger span:nth-of-type(3) {
+  top: 100%;
+  transform-origin: left center;
+  transform: translateY(-100%);
+}
+
+.burger input:checked ~ span:nth-of-type(1) {
+  transform: rotate(45deg);
+  top: 0px;
+  left: 5px;
+}
+
+.burger input:checked ~ span:nth-of-type(2) {
+  width: 0%;
+  opacity: 0;
+}
+
+.burger input:checked ~ span:nth-of-type(3) {
+  transform: rotate(-45deg);
+  top: 28px;
+  left: 5px;
+}
+
+/* Small Devices */
+@media (max-width: 479px) {
+  #nav-menu p {
+    display: none;
+  }
+  .nav-bar {
+    padding: 10px;
+  }
+  .nav-bar .nav-menu {
+    gap: 15px;
+  }
+  .logo {
+    gap: 10px;
+  }
+}
+
+/* Medium devices (768px and up) */
+@media (max-width: 767px) {
+  .nav-menu p {
+    display: none;
+  }
+  .nav-bar .nav-menu {
+    gap: 20px;
+  }
+  .nav-bar {
+    padding: 15px;
+    height: 8vh;
+    z-index: 9999;
+  }
+  #chat-messages {
+    height: 74vh;
+    z-index: 999999;
+  }
+}

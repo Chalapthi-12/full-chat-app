@@ -1,0 +1,22 @@
+@media (max-width: 420px) {
+}
+
+@media (max-width: 477px) {
+}
+
+/* Medium devices (768px and up) */
+@media (max-width: 767px) {
+  .users-container {
+    flex-grow: 1 !important;
+  }
+}
+@media (max-width: 1060px) {
+  .users-container {
+    width: 30%;
+  }
+}
+@media (max-width: 890px) {
+  .users-container {
+    width: 35%;
+  }
+}

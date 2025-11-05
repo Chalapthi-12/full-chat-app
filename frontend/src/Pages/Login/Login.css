@@ -1,0 +1,18 @@
+.sign-up {
+  height: 85vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.sign-up-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 380px;
+}
+@media (max-width: 479px) {
+  .sign-up-container {
+    width: 340px;
+  }
+}

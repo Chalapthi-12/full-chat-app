@@ -1,0 +1,31 @@
+.profile-page {
+  height: 85vh;
+}
+.profile-top,
+.profile-bottom {
+  width: 600px;
+}
+
+@media (max-width: 420px) {
+  .profile-top,
+  .profile-bottom {
+    width: 300px !important;
+    padding: 10px;
+    gap: 2px;
+  }
+}
+
+@media (max-width: 477px) {
+  .profile-top,
+  .profile-bottom {
+    width: 220px;
+  }
+}
+
+/* Medium devices (768px and up) */
+@media (max-width: 767px) {
+  .profile-top,
+  .profile-bottom {
+    width: 400px;
+  }
+}
