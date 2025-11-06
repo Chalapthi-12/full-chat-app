@@ -12,7 +12,10 @@ const app = express();
 app.use(cookieParser());
 app.use(
   cors({
-    origin: "http://localhost:5173",
+    origin: [
+      "http://localhost:5173",
+      "https://full-chat-app-1-4grm.onrender.com",
+    ],
     credentials: true,
   })
 );
