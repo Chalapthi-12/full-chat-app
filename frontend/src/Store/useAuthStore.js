@@ -49,9 +49,7 @@ const useAuthStore = create((set) => ({
   },
   logout: async () => {
     try {
-      const res = await axiosInstance.post("/auth/logout", {
-        credentials: true,
-      });
+      const res = await axiosInstance.post("/auth/logout");
       if (res.data.success === true) {
         set({
           authUser: null,
@@ -94,12 +92,11 @@ const useAuthStore = create((set) => ({
   updateProfile: async (data) => {
     try {
       set({ isUpdatingProfile: true });
-      const res = await axiosInstance.put("/auth/update-profile", data, {
-        credentials: true,
-      });
-      if (res.success === "false") {
-        return toast.error(res.data.messages);
+      const res = await axiosInstance.put("/auth/update-profile", data);
+      if (res.data.success === false) {
+        return toast.error(res.data.message);
       }
+      set({ authUser: res.data.data });
       toast.success(res.data.message);
     } catch (error) {
       toast.error(error.response.data.message);

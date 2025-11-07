@@ -18,6 +18,8 @@ app.use(
       "https://full-chat-app-e883.onrender.com",
     ],
     credentials: true,
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    allowedHeaders: ["Content-Type", "Authorization"],
   })
 );
 app.use(express.json({ limit: "50mb" }));
