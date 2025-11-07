@@ -24,7 +24,7 @@ const useMessageStore = create((set) => ({
       });
     } catch (error) {
       console.log(error);
-      error.toast(error.response.data.message);
+      toast.error(error.response.data.message);
     } finally {
       set({
         isUsersLoading: false,
@@ -37,7 +37,7 @@ const useMessageStore = create((set) => ({
         isMessagesloading: true,
       });
       const res = await axiosInstance.get(`/message/${userId}`, {
-        crednetials: true,
+        credentials: true,
       });
       set({
         messages: res.data.data,
@@ -56,22 +56,16 @@ const useMessageStore = create((set) => ({
       set({
         isSendingMessage: true,
       });
-      const res = await axiosInstance.post(
-        `/message/send/${userId}`,
-        data,
-        {
-          credentials: true,
+      const res = await axiosInstance.post(`/message/send/${userId}`, data, {
+        credentials: true,
+        headers: {
+          "Content-Type": "application/json",
         },
-        {
-          headers: {
-            "Content-Type": "application/json",
-          },
-        }
-      );
-      console.log(res.data);
-      set({
-        messages: [...messages, res.data],
       });
+      console.log(res.data);
+      set((state) => ({
+        messages: [...state.messages, res.data.data],
+      }));
     } catch (error) {
       toast.error(error.response.data.message);
       console.log(error);

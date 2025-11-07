@@ -15,6 +15,7 @@ app.use(
     origin: [
       "http://localhost:5173",
       "https://full-chat-app-1-4grm.onrender.com",
+      "https://full-chat-app-e883.onrender.com",
     ],
     credentials: true,
   })
